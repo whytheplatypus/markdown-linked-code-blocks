@@ -1,15 +1,37 @@
 {
-  "name": "md-linked-code-blocks",
+  "name": "markdown-linked-code-blocks",
+  "displayName": "markdown-linked-code-blocks",
+  "description": "",
   "version": "0.0.1",
-  "description": "markdown-it extension to render code blocks linked to a piece of code",
-  "main": "highlight.js",
-  "scripts": {
-    "test": "node test.js"
+  "engines": {
+    "vscode": "^1.84.0"
   },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "highlight.js": "^11.9.0",
-    "markdown-it": "^13.0.2"
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "markdown.markdownItPlugins": true
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.84.0",
+    "@types/mocha": "^10.0.3",
+    "@types/node": "18.x",
+    "@typescript-eslint/eslint-plugin": "^6.9.0",
+    "@typescript-eslint/parser": "^6.9.0",
+    "eslint": "^8.52.0",
+    "glob": "^10.3.10",
+    "mocha": "^10.2.0",
+    "typescript": "^5.2.2",
+    "@vscode/test-electron": "^2.3.6"
   }
 }
